@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  title = "hello world";
+  /*title = "hello world";
   year = 2021;
   myFirstApp = false;
 
@@ -68,10 +69,69 @@ export class AppComponent {
 
     },1000)
     
+  }*/
+
+  /******************************************************************************************** */
+
+  /*email ='tchourabi@gmail.com';
+  today = new Date()
+  chiffre = 325521546325 
+  amount  = 1200;*/
+
+
+  employees = [];
+
+
+  formIndex = 0;
+
+  form = new FormGroup({
+    username : new FormControl('' ,[Validators.required,Validators.email]),
+    password : new FormControl('',[Validators.required,Validators.min(8)]),
+    address : new FormGroup({
+      city: new FormControl('',Validators.required),
+      code: new FormControl('',Validators.required)
+    })
+    
+  });
+
+
+  formTwo = new FormGroup({
+    fullname: new FormControl('',Validators.required)
+  })
+
+  validateForm(){
+    this.formIndex++;
+  }
+  constructor(){ 
+  }
+
+
+  ngOnInit(): void {
+     console.log(this.form);
+     
+  }
+
+
+  validateAll(){
+    const formOne = this.form.value;
+    const formTwo = this.formTwo.value;
+
+    const all = {
+      formOne: formOne,
+      formTwo: formTwo
+    }
+
+    console.log(all);
+    
+    this.employees.push(formOne);
+    this.form.reset();
+    this.formIndex = 0;
+
   }
 
 
 
+ 
 
 
 

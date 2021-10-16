@@ -1,7 +1,8 @@
-
+<!--
 <h1>
   app title : {{ title }}
-</h1>
+</h1>-->
+
    
  <!--<ul>
    <li *ngFor="let e of employees;let j = index; " >
@@ -20,4 +21,108 @@
  </ul>-->
 
 
-<img [src]="gallery[currentIndex]" width="100%" alt="">
+<!--<img [src]="gallery[currentIndex]" width="100%" alt="">-->
+<!--****************************************************************************-->
+
+
+<!--
+<p>
+  {{ email | email:15:'hello' }}
+</p>
+
+
+<p>
+  {{ today | date:'medium' }}
+</p>
+
+
+<p>
+  {{ chiffre | number }}
+</p>
+
+
+<p>
+  {{ 'dsdsdsd' | uppercase }}
+</p>
+
+<p>
+  {{ 'JSDKJKSJD' | lowercase }}
+</p>
+
+<p>
+  {{ 'taher chourabi' | titlecase }}
+</p>
+
+<p>
+  {{ amount | currency:' TND' }}
+</p>-->
+
+<!--*************************** forms *********************************-->
+
+
+<form [formGroup]="form"  (ngSubmit)="validateForm()" *ngIf="formIndex == 0">
+
+  <div>
+    <label for="">username 
+      <span *ngIf="form.controls.username.valid == false" class="text-danger">*</span>
+     </label>
+    <input type="text" formControlName="username"  >
+  </div>
+
+  <div>
+    <label for="">password</label>
+    <input type="password" formControlName="password"  >
+  </div>
+
+
+  <div formGroupName="address">
+    <div>
+      <label for="">city 
+       
+       </label>
+      <input type="text" formControlName="city"  >
+    </div>
+
+    <div>
+      <label for="">code 
+       
+       </label>
+      <input type="text" formControlName="code"  >
+    </div>
+
+
+  </div>
+
+  <br>
+  <button type="submit" [disabled]=" ! form.valid " >next</button>
+  
+
+</form>
+
+
+
+<form [formGroup]="formTwo" (ngSubmit)="validateAll()" *ngIf="formIndex == 1">
+  <div>
+    <label for="">fullname 
+     
+     </label>
+    <input type="text" formControlName="fullname"  >
+  </div>
+
+
+  <br>
+  <button type="submit" [disabled]=" ! formTwo.valid " >valider</button>
+  
+
+</form>
+
+
+
+<ul>
+  <li *ngFor="let e of employees">
+    <p>
+      <strong>{{e.username}}</strong><br>
+      <small>{{e.address.city}}, {{e.address.code}}</small>
+    </p>
+  </li>
+</ul>
