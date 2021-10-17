@@ -58,7 +58,7 @@
 </p>-->
 
 <!--*************************** forms *********************************-->
-
+<!--
 
 <form [formGroup]="form"  (ngSubmit)="validateForm()" *ngIf="formIndex == 0">
 
@@ -125,4 +125,51 @@
       <small>{{e.address.city}}, {{e.address.code}}</small>
     </p>
   </li>
+</ul>-->
+
+
+<!--********************************** events *************************************-->
+
+<!--
+<input type="text"  
+(keyup)="hundleKeyPress($event)" >
+
+
+<ul>
+  <li *ngFor="let e of employeesImage" >{{e}}</li>
 </ul>
+
+
+<label for="">chosen : {{contry}}</label>
+<select (change)="hundleSelectChange($event)" >
+  <option value="">please choose a value</option>
+  <option value="UK">UK</option>
+  <option value="USA">USA</option>
+  <option value="EUR">EUR</option>
+  
+</select>-->
+<!--
+  
+<div class="field" 
+(mousemove)="isMoving($event)" >
+
+  <div class="ball" 
+  [style.top]="y+'px'" 
+  [style.left]="x+'px'" ></div>
+</div>-->
+
+
+
+
+<ul>
+  <li *ngFor="let m of chat">
+    <p>
+      <strong>{{ m.me }}</strong> <br>
+      {{m.message}} <br>
+      <small> {{m.messageDate | date:'medium'}} </small>
+    </p>
+  </li>
+</ul>
+
+<p *ngIf=" useIsTyping " >is typing...</p>
+<input type="text" (keyup)="isTyping($event)">

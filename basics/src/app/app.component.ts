@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
     
   }*/
 
-  /******************************************************************************************** */
+  /********************************************** forms********************************************** */
 
   /*email ='tchourabi@gmail.com';
   today = new Date()
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
   amount  = 1200;*/
 
 
-  employees = [];
+  /*employees = [];
 
 
   formIndex = 0;
@@ -127,15 +127,108 @@ export class AppComponent implements OnInit {
     this.form.reset();
     this.formIndex = 0;
 
+  }*/
+
+
+
+  /********************************** events ************************************** */
+
+
+  /*employees = [
+    'chourabi taher',
+    'jason stathem',
+    'david beckam'
+  ]
+
+
+  employeesImage = [
+    'chourabi taher',
+    'jason stathem',
+    'david beckam'
+  ]
+
+  contry = '';
+  x= 0;
+  y= 0;*/
+
+
+  chat=[];
+  useIsTyping = false;
+
+  constructor() {
+
   }
 
 
+  ngOnInit(): void {
 
+  }
+
+/*
+  hundleKeyPress(e:any){
+    const value = e.target.value;
+
+    let res = this.employees.filter((e)=> e.toLowerCase().indexOf(value.toLowerCase()) != -1);
+
+   this.employeesImage = res;
+    
+    
+    
+  }
+
+
+  hundleSelectChange(e:any){
+    const val = e.target.value;
+    if (val !== '') {
+      this.contry = val;
+    }
+  }
+
+
+  isMoving(e:any){
+    const x = e.clientX;
+    const y = e.clientY;
+
+    this.x = x;
+    this.y = y;
+    
+    
+    
+  }*/
+
+
+
+  isTyping(e){
+    console.log(e);
+    const code = e.code;
+    
+    const message = e.target.value;
+    const messageDate = new Date();
+    const me ='chourabi taher';
+
+    const messageToSend = {
+      message,
+      messageDate,
+      me
+    }
  
+    if (code === 'Enter') {
+      this.sendMessage(messageToSend);
+      this.useIsTyping = false;
+      e.target.value='';
+    }else{
+      this.useIsTyping = true;
+    }
 
 
+    
+  }
 
- 
+
+  sendMessage(message){
+    this.chat.push(message);
+  }
+
 
 
 }
