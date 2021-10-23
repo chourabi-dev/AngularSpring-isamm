@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let a of articles">
+        <p>
+            {{ a.title }}
+        
+        </p>
+
+        <a [routerLink]=" '/article/details/'+a.id ">more details</a>
+    </li>
+</ul>

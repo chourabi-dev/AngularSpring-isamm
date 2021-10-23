@@ -12,6 +12,11 @@ import { SocialButtonsComponent } from './social-buttons/social-buttons.componen
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { TeamComponent } from './team/team.component';
+import { HistroyComponent } from './histroy/histroy.component';
+import { ArtcielsPageComponent } from './artciels-page/artciels-page.component';
+import { ArticlDetailsPageComponent } from './articl-details-page/articl-details-page.component';
+import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     SocialButtonsComponent,
     HomePageComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    TeamComponent,
+    HistroyComponent,
+    ArtcielsPageComponent,
+    ArticlDetailsPageComponent,
+    NotfoundPageComponent
   ],
   imports: [
     BrowserModule,
