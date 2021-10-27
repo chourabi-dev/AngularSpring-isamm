@@ -7,6 +7,7 @@ import { ProduitsPageComponent } from './produits-page/produits-page.component';
 import { MyFavouritsComponent } from './my-favourits/my-favourits.component';
 import { ProductDetailsPageComponent } from './product-details-page/product-details-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NewTypesComponent } from './new-types/new-types.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProduitsPageComponent,
     MyFavouritsComponent,
     ProductDetailsPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    NewTypesComponent
   ],
   imports: [
     BrowserModule,
