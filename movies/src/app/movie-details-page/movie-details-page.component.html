@@ -1,0 +1,23 @@
+
+<div class="row" *ngIf="isLoading == true">
+    <h3>Loading...</h3>
+</div>
+
+<div class="row" *ngIf="isLoading == false">
+    <div class="col-sm-3">
+        <img [src]="movie.large_cover_image" class="w-100" alt="">
+    </div>
+
+    <div class="col-sm-9">
+        <h1>{{movie.title}}</h1>
+        <p>
+            {{movie.description_full}}
+        </p>
+
+        <div class="row">
+            <div class="col" *ngFor="let t of movie.torrents">
+                <a class="btn btn-primary w-100" [href]="t.url" download >{{t.quality}}</a>
+            </div>
+        </div>
+    </div>
+</div>

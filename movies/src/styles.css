@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.movie-card > .title{
+    display: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    position: absolute;
+    z-index: 15;
+}
+
+
+.movie-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 250px;
+    background-color: rgb(207, 207, 207);
+}
+
+.movie-card:hover > img{
+    filter: brightness(0.5)
+}
+.movie-card:hover > .title{
+    display: block;
+}
