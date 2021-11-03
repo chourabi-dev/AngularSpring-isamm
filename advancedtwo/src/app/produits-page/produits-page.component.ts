@@ -14,6 +14,12 @@ export class ProduitsPageComponent implements OnInit {
 
   ngOnInit(): void {
     // init image, => *ngFor
+ 
+    // CALL serevr, + token ,
+    // response success true !! 
+    // succes false, session expoired  403 
+    // local .clear , + alert("session expored ") + redirect page auth
+
 
     this.imageListProducts = this.products.getProductsList();
   }

@@ -1,0 +1,20 @@
+<div class="container">
+    <h3>Login page</h3>
+
+
+    <form [formGroup]="authForm" (ngSubmit)="connect()" >
+
+        <div class="mb-3">
+            <label for="">Username</label>
+            <input type="text" class="form-control" formControlName="username">
+        </div>
+        <div class="mb-3">
+            <label for="">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" [disabled]="! authForm.valid" >CONNECT</button>
+        </div>
+        
+    </form>
+</div>

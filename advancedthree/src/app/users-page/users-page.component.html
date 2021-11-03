@@ -1,0 +1,9 @@
+
+<h1 *ngIf="isLoading == true">Loading...</h1>
+
+<ul>
+    <li *ngFor="let u of users" >
+        <h3>{{u.name}}</h3>
+        <p>{{u.email}}  </p>
+    </li>
+</ul>
