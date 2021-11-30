@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-body">
+        
+        <div class="d-flex justify-content-between">
+            <h3>Clients</h3>
+            
+            <a routerLink="/clients/add" class="btn btn-sm btn-primary">Add client</a>
+        </div>
+
+
+
+        <div class="mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td> 
+                        <td>Actions</td>
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let d of clients;let i=index;">
+                        <td>{{i +1 }}</td>
+                        <td> {{d.name}} </td>
+                        <td> {{ d.email }} </td>
+                        <td> {{ d.phone }} </td> 
+
+                        <td>
+                            <a routerLink="" class="btn btn-info">add new order</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
