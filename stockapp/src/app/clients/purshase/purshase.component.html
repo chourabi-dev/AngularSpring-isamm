@@ -1,0 +1,54 @@
+<d class="card">
+    <div class="card-body">
+        <form [formGroup]="formData" (ngSubmit)="addOrder()" >  
+            <div class="form-group mb-3">
+                <label for="">Quantity</label>
+                <input type="number" formControlName="quantity" class="form-control">
+            </div>
+             
+            <div class="form-group mb-3">
+                <label for="">Product</label>
+                <select type="text" formControlName="product" class="form-control" >
+                    <option value="">Please choose a value</option>
+                    <option [value]="d.id" *ngFor="let d of products">{{d.name}}</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-success" [disabled]="!  formData.valid" >Save</button>
+            </div>
+
+
+        </form>
+
+
+        <hr>
+
+        <ul>
+
+            <li *ngFor="let o of orders; let i = index;">
+                <div class="d-flex">
+                    <strong> Product N° {{o.product}} * {{ o.quantity }} </strong> <span (click)="deleteByIndex(i)" class="text-danger" style="margin-left: 15px;">
+
+                        <i class="fas fa-trash"></i>
+                    </span>
+                </div>
+            </li>
+
+        </ul>
+
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio possimus numquam, perferendis adipisci aspernatur impedit dolorem enim quibusdam magnam nesciunt blanditiis deserunt cum earum odit, eligendi hic eum excepturi ab.</p>
+
+        <button (click)="sendOrdersToServer()" class="btn btn-success" >Place order</button>
+
+
+
+
+
+
+        
+        <div class="alert alert-success" *ngIf=" successMessage != '' " >
+            {{successMessage}}
+        </div>
+    </div>
+</d>

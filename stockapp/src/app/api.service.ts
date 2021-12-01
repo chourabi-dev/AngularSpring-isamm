@@ -44,4 +44,19 @@ export class ApiService {
    addNewClient(data){
     return this.http.post(environment.api+'/clients/add',data)
    }
+
+
+   addNewDepot(data){
+    return this.http.post(environment.api+'/depots/add',data)
+   }
+
+   getLitDepot(){
+    return this.http.get(environment.api+'/depots/list')
+   }
+
+
+   placeOrders(data){
+     return this.http.post(environment.api+'/sells/add-many',data)
+   }
+
 }

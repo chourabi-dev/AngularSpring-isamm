@@ -2,9 +2,9 @@
     <div class="card-body">
         
         <div class="d-flex justify-content-between">
-            <h3>Clients</h3>
+            <h3>Depots</h3>
             
-            <a routerLink="/clients/add" class="btn btn-sm btn-primary">Add client</a>
+            <a routerLink="/depots/add" class="btn btn-sm btn-primary">Add depot</a>
         </div>
 
 
@@ -15,23 +15,16 @@
                     <tr>
                         <td>#</td>
                         <td>Name</td>
-                        <td>Email</td>
-                        <td>Phone</td> 
-                        <td>Actions</td>
+                        <td>Address</td> 
                         
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let d of clients;let i=index;">
+                    <tr *ngFor="let d of depots;let i=index;">
                         <td>{{i +1 }}</td>
                         <td> {{d.name}} </td>
-                        <td> {{ d.email }} </td>
-                        <td> {{ d.phone }} </td> 
-
-                        <td>
-                            <a [routerLink]="'/clients/pass-orders/'+d.id" class="btn btn-info">add new order</a>
-                        </td>
+                        <td> {{ d.address }} </td> 
                     </tr>
                 </tbody>
             </table>

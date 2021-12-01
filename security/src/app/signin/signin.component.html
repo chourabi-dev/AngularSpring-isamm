@@ -1,0 +1,18 @@
+<a routerLink="/signup">create account</a>
+
+<hr>
+
+
+<form [formGroup]="form" (ngSubmit)="saveUser()"> 
+    <label for="">Username</label><br>
+    <input type="text" formControlName="username" > <br>
+     
+    
+    <label for="">password</label><br>
+    <input type="text" formControlName="password" > <br>
+ 
+
+    <button type="submit">connect</button>
+    
+    
+</form>
